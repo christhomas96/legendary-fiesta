@@ -18,10 +18,10 @@ Validation, checks, follow ups: We run a check whether the slot has been booked 
 Here we are making sure most of the cases are automated, and the interns only jobs would be to do the manual work whenever needed (Which could be close to 10-15%, again an assumption)
 
 Now lets talk about the edge cases:
-I’ve used calendly, and I might end up scheduling multiple meetings (could be because of a network error, or anything tbh), there needs to be a check for this and it’ll need human intervention to understand the right time. In the future also can automate this.
-Time zone difference: Candidate is in India, company is someplace else, here I’ll need to handle the code for reminders.
+        I’ve used calendly, and I might end up scheduling multiple meetings (could be because of a network error, or anything tbh), there needs to be a check for this and it’ll need human intervention to understand the right time. In the future also can automate this.
+        Time zone difference: Candidate is in India, company is someplace else, here I’ll need to handle the code for reminders.
 
 Assumptions made:
-Given sheet has correct data.
-Twilio account is present
-Access to read only API from the company’s side- which helps both the company and us.
+        Given sheet has correct data.
+        Twilio account is present
+        Access to read only API from the company’s side- which helps both the company and us.
