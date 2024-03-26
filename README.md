@@ -49,6 +49,7 @@ Function Descriptions:
    - If an event is rescheduled, it notifies the interviewee by calling the `notify_interviewee_event_rescheduled` function.
    - Additional logic can be added to handle other types of event updates, if needed.
    - Case covered: Monitoring Calendly event updates and notifying interviewees about cancellations or rescheduling.
+   - Added notification for the Interviewer if a meeting is scheduled
 
 4. **`follow_up_company_unscheduled(company_contact, company_name, event_id)`**:
    - This function follows up with the company if there are unscheduled interviews after a certain period (one week in this implementation).
