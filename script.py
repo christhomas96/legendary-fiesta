@@ -83,6 +83,9 @@ def monitor_calendly_events(event_id, company_contact, company_name):
             notify_interviewee_event_rescheduled(update.invitee_email, company_name, update.new_event_time)
             # ... (additional logic for handling event rescheduling)
 
+        elif update.event_status == 'scheduled':
+            notify_company_interviewer(company_contact, company_name, update.event_time, update.invitee_email)
+
 # Function to follow up with the company for unscheduled interviews
 def follow_up_company_unscheduled(company_contact, company_name, event_id):
     # Check for unscheduled interviews after a certain period (e.g., one week)
@@ -142,6 +145,11 @@ def follow_up(email, phone, company_name, calendly_link):
 def manual_intervention(email, phone, company_name):
     print(f"Manual intervention required for interviewee {email}/{phone} for {company_name}")
     # Your code for manual intervention (e.g., assigning the case to a team member)
+    team_member = assign_case_to_team_member(email, phone, company_name)
+    if team_member:
+        print(f"Case assigned to {team_member} for manual follow-up.")
+    else:
+        print("Unable to assign case for manual follow-up.")
 
 # Function to send an email
 def send_email(recipient, message):
@@ -197,3 +205,15 @@ def notify_interviewee_event_canceled(invitee_email, company_name):
 def notify_interviewee_event_rescheduled(invitee_email, company_name, new_event_time):
     message = f"Dear Interviewee,\n\nYour interview with {company_name} has been rescheduled to {new_event_time}. Please make a note of the new date and time.\n\nBest regards,\nYour Team"
     send_email(invitee_email, message)
+
+# Function to notify company interviewer about scheduled interview
+def notify_company_interviewer(company_contact, company_name, event_time, invitee_email):
+    message = f"Dear Company Interviewer,\n\nAn interview has been scheduled with {company_name} for {invitee_email} at {event_time}. Please make a note of this and follow up with the interviewee to ensure their attendance.\n\nBest regards,\nYour Team"
+    send_email(company_contact, message)
+
+# Function to assign case to a team member for manual follow-up (placeholder)
+def assign_case_to_team_member(email, phone, company_name):
+    # Implement your logic to assign the case to a team member
+    # For example, you could use a round-robin or load balancing strategy
+    # Return the team member's name or identifier
+    return "Team Member 1"
