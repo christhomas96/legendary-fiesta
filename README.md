@@ -51,7 +51,7 @@ Function Descriptions:
    - Case covered: Monitoring Calendly event updates and notifying interviewees about cancellations or rescheduling.
    - Added notification for the Interviewer if a meeting is scheduled
 
-4. **`follow_up_company_unscheduled(company_contact, company_name, event_id)`**:
+4. **`follow_up_company_unscheduled(company_contact, company_name, event_id)`**: (Not really necessary, removed from main branch for now)
    - This function follows up with the company if there are unscheduled interviews after a certain period (one week in this implementation).
    - It queries the Calendly API for unscheduled events related to the given event ID.
    - If any unscheduled interviews are found, it sends a follow-up email to the company's contact, requesting them to review and update their Calendly link or provide additional information to facilitate the scheduling process.
