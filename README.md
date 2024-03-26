@@ -34,7 +34,7 @@ Function Descriptions:
 1. **`extract_calendly_info(calendly_link)`**:
    - This function takes a Calendly link as input and extracts the Calendly event ID and expiration date from the link.
    - The logic to extract this information may vary depending on the structure of the Calendly link provided.
-   - In the current implementation, it simply extracts the last part of the URL as the event ID and assumes a hardcoded expiration date (August 1, 2023).
+   - In the current implementation, it simply extracts the last part of the URL as the event ID and assumes a hardcoded expiration date.
    - Case covered: Extracting relevant information from the Calendly link for further processing.
 
 2. **`notify_company_link_expiration(company_contact, company_name, calendly_link)`**:

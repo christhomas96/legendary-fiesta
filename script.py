@@ -60,7 +60,7 @@ def extract_calendly_info(calendly_link):
     # Implement logic to extract the event ID and expiration date from the Calendly link
     # This logic may vary depending on the link structure provided by Calendly
     event_id = calendly_link.split('/')[-1]
-    expiration_date = datetime(2023, 8, 1)  # Replace with actual expiration date extraction logic
+    expiration_date = datetime(2024, 8, 1)  # Replace with actual expiration date extraction logic
     return event_id, expiration_date
 
 # Function to notify the company about an expiring Calendly link
