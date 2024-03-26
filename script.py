@@ -86,15 +86,6 @@ def monitor_calendly_events(event_id, company_contact, company_name):
         elif update.event_status == 'scheduled':
             notify_company_interviewer(company_contact, company_name, update.event_time, update.invitee_email)
 
-# Function to follow up with the company for unscheduled interviews
-def follow_up_company_unscheduled(company_contact, company_name, event_id):
-    # Check for unscheduled interviews after a certain period (e.g., one week)
-    if datetime.now() - last_follow_up_time > timedelta(days=7):
-        unscheduled_interviews = calendly.scheduled_events.list(event_id=event_id, status='unscheduled')
-        if unscheduled_interviews:
-            message = f"Dear {company_name},\n\nWe noticed that {len(unscheduled_interviews)} interviews remain unscheduled for your company. Please review and update your Calendly link or provide additional information to facilitate the scheduling process.\n\nBest regards,\nYour Team"
-            send_email(company_contact, message)
-            last_follow_up_time = datetime.now()
 
 # Function to send the Calendly link to the interviewee
 def send_calendly_link(email, phone, company_name, calendly_link):
