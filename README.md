@@ -1,7 +1,6 @@
 # legendary-fiesta
-Automate candidate reach out
+Candidate reach out automation with minimum human intervention
 
-Okay so this is how I’m planning to automate this.
 
 Why automation when you have interns?
 Because interns might mess up and we cannot mess up. So we make things easier for them by automating boring tasks.
